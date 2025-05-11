@@ -24,10 +24,16 @@ async function setWallet() {
         ]
     });
 
-    if (wallet && wallet.startsWith(('UQ', 'EQ')) && wallet.length >= 24) {
-        // Сохраняем кошелек
+    if (wallet && (wallet.startsWith('UQ') || wallet.startsWith('EQ')) && wallet.length >= 24) {
+        // Сохраняем кошелек локально
         localStorage.setItem('wallet', wallet);
         updateWalletInfo(wallet);
+        
+        // Отправляем данные в бота
+        tg.sendData(JSON.stringify({
+            wallet: wallet
+        }));
+        
         tg.showAlert('Кошелек успешно сохранен!');
     } else {
         tg.showAlert('Неверный формат кошелька');

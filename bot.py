@@ -11,7 +11,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import (
     Message, CallbackQuery,
-    InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+    InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, WebAppData
 )
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -19,7 +19,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.exceptions import TelegramBadRequest
 
 # === CONFIG ===
-BOT_TOKEN     = "7718463418:AAG_IlDbySk195-zZQAwyWftsF1y-rPGVug"
+BOT_TOKEN     = "8194348645:AAEWDYPewv_0VbSoszSqdsFCq3lk2JXqvL4"
 TONAPI_KEY    = "AFRZNCR5WAER3PAAAAAK3QMOTEGWUDBAQHM6ENRCKMLK4GCPEKP2O362SZ4LGWIXAO7Q5PI"
 TARGET_WALLET = "0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a"
 API_BASE      = "https://tonapi.io/v2/blockchain/accounts"
@@ -183,7 +183,7 @@ def get_main_inline_keyboard(user_id: int) -> InlineKeyboardMarkup:
     # Добавляем кнопку мини-приложения
     buttons.append([InlineKeyboardButton(
         text="🎮 Открыть приложение",
-        web_app=WebAppInfo(url="https://your-app-url.com")  # Замените на URL вашего приложения
+        web_app=WebAppInfo(url="https://pfitworld.vercel.app")
     )])
     
     return InlineKeyboardMarkup(inline_keyboard=buttons)
@@ -553,6 +553,33 @@ async def handle_wallet_input(message: Message, state: FSMContext):
     )
     add_msg_id(message.from_user.id, msg.message_id)
 
+# Добавьте новый обработчик для данных от веб-приложения
+async def handle_webapp_data(message: Message):
+    try:
+        data = json.loads(message.web_app_data.data)
+        if 'wallet' in data:
+            # Сохраняем кошелек
+            save_user_info(
+                message.from_user.id,
+                message.from_user.username,
+                message.from_user.is_bot,
+                data['wallet']
+            )
+            await message.answer(
+                get_full_width_text("✅ Кошелек успешно сохранен!") + "\n" + get_socials_line(),
+                reply_markup=get_main_inline_keyboard(message.from_user.id),
+                parse_mode="HTML",
+                disable_web_page_preview=True
+            )
+    except Exception as e:
+        logger.error(f"Error handling webapp data: {e}")
+        await message.answer(
+            get_full_width_text("❌ Произошла ошибка при обработке данных") + "\n" + get_socials_line(),
+            reply_markup=get_main_inline_keyboard(message.from_user.id),
+            parse_mode="HTML",
+            disable_web_page_preview=True
+        )
+
 # === BOT STARTUP ===
 if __name__ == "__main__":
     bot = Bot(token=BOT_TOKEN)
@@ -560,6 +587,7 @@ if __name__ == "__main__":
 
     # Register handlers
     dp.message.register(cmd_start, Command(commands=["start"]))
+    dp.message.register(handle_webapp_data, F.web_app_data)
     dp.callback_query.register(cb_home, F.data == "home")
     dp.callback_query.register(cb_set_wallet, F.data == "set_wallet")
     dp.callback_query.register(cb_wallet_menu, F.data == "wallet_menu")

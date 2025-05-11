@@ -5258,3 +5258,60 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: query
 2025-05-11 11:33:19,391 INFO Connection established (tryings = 1, bot id = 7718463418)
 2025-05-11 11:42:37,224 INFO Polling stopped
 2025-05-11 11:42:37,480 INFO Polling stopped for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:46:42,087 INFO Start polling
+2025-05-11 12:46:43,074 INFO Run polling for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:49:45,793 INFO Polling stopped
+2025-05-11 12:49:46,046 INFO Polling stopped for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:49:52,817 INFO Start polling
+2025-05-11 12:49:53,681 INFO Run polling for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:55:11,215 INFO Polling stopped
+2025-05-11 12:55:11,472 INFO Polling stopped for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:55:15,651 INFO Start polling
+2025-05-11 12:55:16,543 INFO Run polling for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:55:39,222 INFO Update id=623681625 is not handled. Duration 1 ms by bot id=7718463418
+2025-05-11 12:55:45,597 INFO Update id=623681626 is handled. Duration 1900 ms by bot id=7718463418
+2025-05-11 12:55:48,190 INFO Will stop fetching at transactions before 2025-03-02 00:00:00
+2025-05-11 12:55:49,575 INFO 🔄 Загружено 200 транзакций (всего: 200)
+2025-05-11 12:55:49,575 INFO Reached transactions before 2025-03-02 00:00:00, stopping fetch
+2025-05-11 12:55:49,576 INFO ✅ Всего загружено 200 транзакций для адреса UQAx2k2LlhpThEpxuICyYQS5SyobDeB1RCHMvZOG5-FByrFN
+2025-05-11 12:55:49,957 INFO 2025-05-06 00:03 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 1.2 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,957 INFO 2025-05-06 00:00 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 6.4 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,957 INFO 2025-05-05 23:46 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 6.4 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,957 INFO 2025-05-05 23:11 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 6.4 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,957 INFO 2025-04-17 18:59 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 3.3 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,958 INFO 2025-04-11 00:32 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 6.4 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,958 INFO 2025-03-16 07:12 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 2 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,958 INFO 2025-03-16 07:07 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 0.5 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:49,958 INFO 2025-03-02 21:20 - 0:31da4d8b961a53844a71b880b26104b94b2a1b0de07544 - 💸 0.3 TON -> 0:89377d334e77ab890981dd864838594dc9fab1d1d7767551c83240621b627b6a
+2025-05-11 12:55:50,585 INFO Update id=623681627 is handled. Duration 3007 ms by bot id=7718463418
+2025-05-11 12:58:11,578 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-05-11 12:58:11,584 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7718463418)
+2025-05-11 12:58:23,084 INFO Connection established (tryings = 1, bot id = 7718463418)
+2025-05-11 12:59:46,509 INFO Polling stopped
+2025-05-11 12:59:46,763 INFO Polling stopped for bot @panda_dc_bot id=7718463418 - 'Panda Donation Checker'
+2025-05-11 12:59:58,755 INFO Start polling
+2025-05-11 13:00:02,716 INFO Run polling for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
+2025-05-11 13:00:25,003 INFO Update id=78423550 is handled. Duration 2516 ms by bot id=8194348645
+2025-05-11 13:01:45,907 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-05-11 13:01:45,917 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8194348645)
+2025-05-11 13:01:57,401 INFO Connection established (tryings = 1, bot id = 8194348645)
+2025-05-11 13:02:19,633 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] Превышен таймаут семафора
+2025-05-11 13:02:19,634 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8194348645)
+2025-05-11 13:02:31,501 INFO Connection established (tryings = 1, bot id = 8194348645)
+2025-05-11 13:02:38,058 INFO Polling stopped
+2025-05-11 13:02:38,309 INFO Polling stopped for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
+2025-05-11 13:03:00,100 INFO Start polling
+2025-05-11 13:03:01,056 INFO Run polling for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
+2025-05-11 13:03:12,898 INFO Update id=78423551 is handled. Duration 2568 ms by bot id=8194348645
+2025-05-11 13:08:20,734 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-05-11 13:08:20,749 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8194348645)
+2025-05-11 13:08:32,233 INFO Connection established (tryings = 1, bot id = 8194348645)
+2025-05-11 13:09:01,822 INFO Polling stopped
+2025-05-11 13:09:02,082 INFO Polling stopped for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
+2025-05-11 13:09:05,139 INFO Start polling
+2025-05-11 13:09:05,656 INFO Run polling for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
+2025-05-11 13:09:14,173 INFO Update id=78423552 is handled. Duration 1185 ms by bot id=8194348645
+2025-05-11 13:10:43,361 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] Превышен таймаут семафора
+2025-05-11 13:10:43,362 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8194348645)
+2025-05-11 13:10:44,280 INFO Polling stopped
+2025-05-11 13:10:44,536 INFO Polling stopped for bot @pfitworld_bot id=8194348645 - 'PandaFiT World'
