@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>PandaFit App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Подключаем TON Connect UI -->
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <!-- Этот блок будет меняться: сначала TON Connect, потом username и адрес -->
+            <div id="header-wallet-area" class="header-wallet-area">
+                <!-- Место для кнопки TON Connect (изначально) -->
+                <div id="ton-connect-button-header"></div> 
+                <!-- Место для username и адреса кошелька (после подключения) -->
+                <div id="user-info-header" class="user-info-header" style="display: none;">
+                    <span id="username-display"></span>
+                    <span id="wallet-address-display"></span>
+                </div>
+            </div>
+            <button id="menu-button" class="menu-button">☰</button> <!-- Блок 3 (кнопка меню) -->
+        </header>
+
+        <main class="app-main">
+            <div class="profile-row">
+                <div id="profile-photo" class="profile-photo-area">
+                    <img src="1l.webp" alt="Profile Photo" id="user-profile-image">
+                </div> <!-- Блок 4 (бывший 1) -->
+                <div id="short-info" class="short-info-area"></div>    <!-- Блок 5 (бывший 7) -->
+            </div>
+            <div id="donations-info" class="donations-area"></div> <!-- Блок 8 -->
+        </main>
+
+        <footer class="app-footer">
+            <button id="custom-button-1" class="footer-button">Кнопка 5</button>
+            <button id="custom-button-2" class="footer-button">Кнопка 6</button>
+            <button id="play-game" class="footer-button play-button">🎮</button> <!-- Кнопка 7 (бывшая Играть) -->
+        </footer>
+    </div>
+
+    <!-- Всплывающее меню (изначально скрыто) -->
+    <div id="popup-menu" class="popup-menu" style="display: none;">
+        <button id="disconnect-wallet-button" class="popup-menu-button">Отвязать кошелёк</button>
+        <button id="close-menu-button" class="popup-menu-button">Закрыть</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
