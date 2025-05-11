@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>PandaFit App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Подключаем TON Connect UI -->
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div id="username-display" class="header-item">Загрузка...</div>
+            <div id="ton-connect-button" class="header-item"></div>
+        </header>
+
+        <main class="app-main">
+            <div class="profile-top-row">
+                <div id="profile-photo" class="profile-photo-area"></div>
+                <div id="short-info" class="short-info-area"></div>
+            </div>
+            <div id="donations-info" class="donations-area"></div>
+        </main>
+
+        <footer class="app-footer">
+            <button id="custom-button-1" class="footer-button">Кнопка 5</button>
+            <button id="custom-button-2" class="footer-button">Кнопка 6</button>
+            <button id="play-game" class="footer-button play-button"></button>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
