@@ -1,0 +1,260 @@
+:root {
+    --tg-theme-bg-color: #1a1a1a; /* Еще темнее фон */
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-hint-color: #b0b0b0;
+    --tg-theme-link-color: #62bcf9;
+    --tg-theme-button-color: #333333; /* Кнопки в футере */
+    --tg-theme-button-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #2c2c2c; /* Блоки контента */
+
+    --button-height: 48px;
+    --border-radius: 16px;
+    --gap: 12px;
+    --header-item-padding: 10px 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    /* Используем env(safe-area-inset-*) для учета вырезов и системных панелей на iOS */
+    padding: env(safe-area-inset-top, var(--gap)) env(safe-area-inset-right, var(--gap)) env(safe-area-inset-bottom, var(--gap)) env(safe-area-inset-left, var(--gap));
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--gap);
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: var(--gap) 0; убрано, т.к. padding теперь у body */
+}
+
+.header-wallet-area {
+    flex-grow: 1;
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: var(--border-radius);
+    height: var(--button-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--header-item-padding);
+    margin-right: var(--gap);
+    overflow: hidden;
+}
+
+.user-info-header {
+    height: var(--button-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 0 20px;
+}
+
+#username-display, #wallet-address-display {
+    font-size: 15px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#wallet-address-display {
+    font-family: monospace;
+}
+
+#ton-connect-button-header {
+    height: var(--button-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+#ton-connect-button-header .ton-connect-button {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+    border-radius: calc(var(--border-radius) - 2px) !important;
+    background-color: var(--tg-theme-link-color) !important;
+    color: var(--tg-theme-button-text-color) !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.menu-button {
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    width: var(--button-height);
+    height: var(--button-height); /* Явно задаём высоту как у остальных */
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.app-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    overflow: hidden; /* Предотвращает "прыжки" при изменении контента */
+}
+
+.profile-row {
+    display: flex;
+    gap: var(--gap);
+    /* Высота будет зависеть от высоты .profile-photo-area */
+}
+
+.profile-photo-area {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    padding-bottom: 35%;
+    height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#user-profile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+}
+
+.short-info-area {
+    flex-grow: 1; /* Занимает оставшееся место */
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: var(--border-radius);
+    padding: var(--gap);
+    font-size: 13px;
+    color: var(--tg-theme-hint-color);
+    /* Высота будет равна высоте .profile-photo-area через flexbox align-items: stretch (по умолчанию) */
+}
+
+.donations-area {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: var(--border-radius);
+    padding: var(--gap);
+    flex-grow: 1;
+    overflow-y: auto; 
+    min-height: 100px; /* Минимальная высота, чтобы блок не схлопывался */
+}
+
+.donations-area h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.donations-area p {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.app-footer {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение кнопок */
+    gap: var(--gap);
+    /* padding-top: var(--gap); убрано, т.к. gap у .app-container */
+}
+
+.footer-button {
+    flex-basis: 0; /* Для равномерного распределения с flex-grow */
+    flex-grow: 1;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    height: var(--button-height);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 10px; /* Горизонтальные паддинги для текста */
+    white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+.footer-button.play-button {
+    font-size: 22px; /* Размер иконки игры */
+}
+
+/* Всплывающее меню */
+.popup-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Меню снизу */
+    padding: var(--gap);
+    z-index: 1000;
+}
+
+.popup-menu-button {
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: calc(480px - 2 * var(--gap)); /* Соответствует ширине app-container */
+    height: var(--button-height);
+    font-size: 16px;
+    margin-bottom: var(--gap);
+    cursor: pointer;
+}
+
+.popup-menu-button:last-child {
+    margin-bottom: 0;
+    background-color: var(--tg-theme-button-color); /* Кнопка Закрыть другого цвета */
+} 
